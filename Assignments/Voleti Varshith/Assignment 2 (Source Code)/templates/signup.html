@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+<body>
+    <h1>Signup page</h1>
+    <form method="POST" action="">
+        <p>Username</p>
+        <input type="text" name="username" id="username" required>
+        <p>Email</p>
+        <input type="text" name="email" id="email" required>
+        <p>Roll number</p>
+        <input type="number" name="rno" id="rno" required>
+        <p>Password</p>
+        <input type="password" name="password" id="password" required>
+        <br><br>
+        <input type="submit" value="Signup">
+        <br><br>
+        <small>Already have an account <a href="{{ url_for('login') }}">Login</a></small>
+    </form>
+</body>
+</html>

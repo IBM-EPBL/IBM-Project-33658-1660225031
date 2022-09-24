@@ -1,0 +1,14 @@
+-- Creating a user table
+create table user( 
+email varchar(100),
+username varchar(100),
+roll_number int PRIMARY KEY,
+password varchar(100)
+);
+-- inserting a data to the user table
+insert into user(email,username,roll_number,password) values('abc@gmail.com','ABC',1,'abc@123')
+insert into user(email,username,roll_number,password) values('abcd@gmail.com','ABCD',2,'abcd@123')
+-- Update table 
+update user set email='ABC@gmail.com' where roll_number=1;
+-- Delete table
+delete from user where roll_number = 2;
