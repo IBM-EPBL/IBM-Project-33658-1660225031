@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Sign up</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='form.css') }}">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&display=swap"
+            rel="stylesheet">
+
+    </head>
+    <body>
+        {% for category,message in get_flashed_messages(with_categories=true) %}
+            <p class="msgs-{{category}}">{{message}}</p>
+        {% endfor %}
+
+
+        
+        
+        <form method="POST">
+                <h2>Signup</h2>
+                <p>Create a new account</p>
+                <br>
+            <input type="text" class="form-control" name="firstName" placeholder="Firstname">
+            <br>
+            
+            <input type="text" class="form-control" name="lastName" placeholder="Lastname">
+            <br>
+            
+            <input type="text" class="form-control" name="userName" placeholder="Username">
+            <br>
+            <input type="email" class="form-control" name="email" placeholder="Email">
+            <br>
+        
+            <input type="password" class="form-control" name="password" placeholder="Password"><br>
+            <input type="submit" value="Signup" class="form-control btn btn-primary">
+            
+            <br>
+            <br>
+            
+            <p>Already have an account? <a href="">Login</a></p>
+        </form>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+            integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+            crossorigin="anonymous"></script>
+
+    </body>
+</html>
