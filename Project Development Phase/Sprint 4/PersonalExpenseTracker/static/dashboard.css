@@ -1,0 +1,95 @@
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Public Sans', sans-serif !important;
+}
+
+nav{
+    background-color: rgb(6, 18, 51) !important;
+    color: #fff;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo a {
+    text-decoration: none;
+    color: #fff;
+    padding-left: 8px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+    padding-left: 18px;
+}
+
+nav ul li a:hover{
+    color: rgb(223, 223, 223);
+}
+
+.page-title{
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.page-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.budget-box{
+    border-radius: 10px;
+    padding: 12px 24px;
+    margin-bottom: 15px;
+    border: 1px #a8a8a8 solid;
+}
+
+
+.budget-name{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.budget-name p a{
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.budget-amt{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.chart{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.details p{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.details p span{
+    font-weight: 400;
+
+}
+
+#cat, #amt{
+    display: none;
+}
