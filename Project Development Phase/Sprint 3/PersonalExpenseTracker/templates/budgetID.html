@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='dashboard.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    
+    
+    <script src="https://use.fontawesome.com/fc3b260925.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="https://img.icons8.com/color-glass/32/null/coin-wallet.png" />
+            <a href=""> Personal Expense Tracker</a>
+        </div>
+    
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}"><i class="fa fa-home" aria-hidden="true"></i> Dashboard</a></li>
+
+            <li><a href="{{ url_for('logout') }}"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <div class="page-name">
+            <p class="page-title">{{budget.name}}</p>
+            <div class="btns">
+                <a href="{{ url_for('addCategory',id=budget.id) }}" class="btn btn-primary">+ Add Transaction</a>
+        
+            </div>
+        </div>
+
+        <div class="chart">
+            <canvas id="myChart" style="max-width:500px"></canvas>
+
+            <div class="details">
+                <p>Total : <span id="total-amt"></span></p>
+                {% for category in budget.categories %}
+                {% if category.category=="Total" %}
+                <p>Remaining amount : <span>{{category.amount}}</span></p>
+                {% else %}
+                <p>{{category.category}} : <span>{{category.amount}}</span></p>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+
+    <p id="cat">{{category}}</p>
+    <p id="amt">{{amount}}</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        
+
+        var xValues = JSON.parse(document.getElementById("cat").innerHTML);
+        var yValues = JSON.parse(document.getElementById("amt").innerHTML);
+
+        var total = 0;
+        for(var i=0;i<yValues.length;i++){
+            total = total+yValues[i];
+        }
+
+        document.getElementById('total-amt').innerHTML=total;
+
+        var barColors = [
+            "#0075A4",
+            "#00AF82",
+            "#F3BC00",
+            "#94C031"
+        ];
+
+        new Chart("myChart", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: ""
+                }
+            }
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+</body>
+</html>
