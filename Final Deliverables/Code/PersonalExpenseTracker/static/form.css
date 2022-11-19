@@ -1,0 +1,24 @@
+body{
+    font-family: 'Public Sans', sans-serif !important;
+}
+
+nav{
+    padding: 12px 24px;
+    background-color: rgb(6, 18, 51);
+}
+
+nav a{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 8px;
+}
+
+form{
+    width: 400px;
+    margin: 40px auto;
+    
+}
+
+h2{
+    font-weight: 700 !important;
+}

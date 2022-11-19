@@ -1,0 +1,90 @@
+body{
+    font-family: 'Public Sans', sans-serif !important;
+}
+
+nav{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.links a{
+    padding-left: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.team{
+    display: flex;
+    flex-direction: column;
+}
+
+a.team-id{
+    font-size: 12px;
+    color: #a8a8a8 !important;
+}
+
+.logo a{
+    color: black;
+    text-decoration: none;
+    padding-left: 5px;
+    font-weight: 500;
+
+}
+
+
+.land-text{
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 70px;
+}
+
+a.sign-btn{
+    padding: 12px 24px;
+    color: #fff;
+    background-color: #0d6efd;
+    border: 1px solid #0d6efd;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: all .2s ease-in-out;
+}
+
+a.sign-btn:hover{
+    color: #fff;
+    background-color: #0e67ec;
+    border: 1px solid #0e67ec;
+}
+
+a.log-btn{
+    padding: 12px 24px;
+    color: #0d6efd;
+    background-color: transparent;
+    border: 1px solid #0d6efd;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+}
+
+a.log-btn:hover{
+    color: #fff;
+    background-color: #0d6efd;
+
+}
+
+img.illu{
+    width: 400px;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
